@@ -38,12 +38,11 @@ USAGE
 
 FLAGS
   --no-vscode      Exclude Visual Studio Code configuration files.
-  -o, --out <dir>  Create project in <dir>.
+  -o, --out <dir>  Create project in <dir>. Default is <gist>.
   -h, --help       Print this help message.
 EOF
 }
 
-DIR="$PWD"
 VSCODE=1
 
 while [[ $# -gt 0 ]]; do
@@ -82,7 +81,7 @@ finally() {
   popd > /dev/null
 }
 
-mkdir -p "$DIR"
+mkdir -p "${DIR:=$GIST}"
 pushd "$DIR" > /dev/null
 trap finally EXIT
 
