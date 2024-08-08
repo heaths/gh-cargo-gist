@@ -34,7 +34,7 @@ usage() {
 Clone a gist into a cargo project.
 
 USAGE
-  $PROG gist <gist> [flags]
+  $PROG <gist> [flags]
 
 FLAGS
   --no-vscode      Exclude Visual Studio Code configuration files.
